@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Form = () => {
+const Form = ({saveSearchLetter}) => {
 
     //Estado para la busqueda
     const [ search, saveSearch ] = useState({
@@ -31,14 +31,16 @@ const Form = () => {
             saveError(true)
             return;
         }
-        saveError(true);
-        
+        saveError(false);
+        saveSearchLetter(search)
     }
     
     return (
         <div className="bg-info">
             <div className="container">
+            {error ? <p className="alert alert-danger text-center p-2 pt-4"> Todos los campos son obligatorios </p> : null}
                 <div className="row">
+                
                     <form 
                         onSubmit={getInfo}
                         className="col card text-white bg-transparent mb-5 pt-5 pb-2">
