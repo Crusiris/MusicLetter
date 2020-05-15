@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 const Form = ({saveSearchLetter}) => {
 
@@ -95,4 +96,8 @@ const Form = ({saveSearchLetter}) => {
     );
 }
  
+Form.propTypes = {
+    saveSearchLetter: PropTypes.func.isRequired
+} 
+
 export default Form;

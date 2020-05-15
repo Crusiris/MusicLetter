@@ -1,4 +1,5 @@
-import React, {Fragment} from 'react'
+import React, {Fragment} from 'react';
+import PropTypes from 'prop-types';
 
 const Song = ({letter}) => {
 
@@ -13,5 +14,8 @@ const Song = ({letter}) => {
 );
 
 } 
- 
+
+Song.propTypes = {
+    letter: PropTypes.string.isRequired
+} 
 export default Song;
